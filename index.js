@@ -27,7 +27,7 @@ const options = { useNewUrlParser: true, useUnifiedTopology: true }
 // Usamos mongose para conectarnos al uri con las opciones y entonces escucharlas en el puerto 3000 usando app
 mongoose
     .connect(uri, options)
-    .then(() => app.listen(port, console.log(`Server running on port ${port}`)))
+    .then(() => app.listen(80, console.log(`Server running on port ${port}`)))
     .catch(error => {
         throw error
     })
