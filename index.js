@@ -4,6 +4,7 @@ const { graphqlHTTP } = require('express-graphql');
 const mongoose = require("mongoose")
 const graphqlSchema = require("./schema/index")
 const graphqlResolvers = require("./lib/resolvers")
+const port = process.env.port || 3000
 
 // Instanciamos Express, necesario en toda aplicación Express
 const app = express()
@@ -26,7 +27,7 @@ const options = { useNewUrlParser: true, useUnifiedTopology: true }
 // Usamos mongose para conectarnos al uri con las opciones y entonces escucharlas en el puerto 3000 usando app
 mongoose
     .connect(uri, options)
-    .then(() => app.listen(5000, console.log("Server is running")))
+    .then(() => app.listen(port, console.log(`Server running on port ${port}`)))
     .catch(error => {
         throw error
     })
