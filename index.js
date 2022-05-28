@@ -4,7 +4,7 @@ const { graphqlHTTP } = require('express-graphql');
 const mongoose = require("mongoose")
 const graphqlSchema = require("./schema/index")
 const graphqlResolvers = require("./lib/resolvers")
-const port = process.env.port || 3000
+const port = process.env.PORT || 3000
 
 // Instanciamos Express, necesario en toda aplicación Express
 const app = express()
