@@ -5,17 +5,13 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 // Instanciamos el objeto Schema enviando como propiedad la estructura 
-const aricleSchema = new Schema({
+const messageSchema = new Schema({
     title: {
         type: String,
         required: true,
     },
 
-    body: {
-        type: String,
-        required: true,
-    },
 }, { timestamps: true })
 
 // Exportamos el modelo del esquema
-module.exports = mongoose.model("Article", aricleSchema)
+module.exports = mongoose.model("MessageReturn", messageSchema)

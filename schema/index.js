@@ -4,29 +4,36 @@ const { buildSchema } = require("graphql")
 // Utilizamos este método para crear nuestros esquemas de la siguiente forma
 module.exports = buildSchema(`
 
-  type Article {
+  type Job {
     _id: ID!
     title: String!
+    companyName: String!
+    place: String!
+    emailCompany: String!
+    phoneCompany: String!
     body: String!
     createdAt: String!
   }
-  type Mensaje{
+  type MessageReturn{
     title: String!
   }
-
-  input ArticleInput {
+  input JobInput {
     title: String!
+    companyName: String!
+    place: String!
+    emailCompany: String!
+    phoneCompany: String!
     body: String!
   }
 
   type Query {
-    articles:[Article!]
-    deleteArticle(id: ID!): Mensaje
+    jobs:[Job!]
+    deleteJob(id: ID!): MessageReturn
   }
 
   type Mutation {
-    createArticle(article:ArticleInput): Article
-    updateArticle(id: String, article:ArticleInput) :Article
+    createJob(job:JobInput): Job
+    updateJob(id: String, job:JobInput) :Job
   }
 
   schema {
