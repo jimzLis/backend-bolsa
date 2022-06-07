@@ -5,10 +5,13 @@ const mongoose = require("mongoose")
 const graphqlSchema = require("./schema/index")
 const graphqlResolvers = require("./lib/resolvers")
 const port = process.env.PORT || 3000
+const cors = require('cors');
 
 // Instanciamos Express, necesario en toda aplicación Express
 const app = express()
-
+app.use(cors({
+    origin: '*'
+}));
 // Declaramos el endpoint y comos egundo parámetro el esquema y resolver de graphQL
 app.use(
         "/graphql",
